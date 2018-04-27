@@ -6,6 +6,18 @@
 
 ```bash
     sudo apt-get update
-    
+
     sudo apt-get install nginx
+```
+
+> Adjust the Firewall
+
+```bash
+    sudo ufw app list
+
+    sudo ufw allow 'Nginx Full'
+    
+    sudo ufw status
+    
+    systemctl status nginx
 ```
