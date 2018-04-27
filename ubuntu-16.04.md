@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install nginx
 ```
 
-> Adjust the Firewall
+> Adjust The Firewall
 
 ``` sh
 sudo ufw app list
@@ -61,7 +61,7 @@ console.log('Server running at http://127.0.0.1:8080/');
 nodemon hello.js
 ```
 
-## Using pm2
+## Using PM2
 
 ``` sh
 pm2 start hello.js
@@ -69,7 +69,7 @@ pm2 start hello.js
 pm2 startup systemd
 ```
 
-## Setup nginx with node.js
+## Setup Nginx With Node.js
 
 ``` sh
 sudo vi /etc/nginx/sites-available/defaul
@@ -94,4 +94,42 @@ sudo vi /etc/nginx/sites-available/defaul
 sudo nginx -t
 
 sudo systemctl restart nginx
+```
+
+## SSL Certficate With Lets Encrypt
+
+``` sh
+sudo add-apt-repository ppa:certbot/certbot
+
+sudo apt-get update
+
+sudo apt-get install python-certbot-nginx
+```
+
+### Integrate With Nginx
+
+``` sh
+sudo vi /etc/nginx/sites-available/default
+```
+
+> /etc/nginx/sites-available/default
+
+``` txt
+. . .
+server_name example.com www.example.com;
+. . .
+```
+
+``` sh
+sudo nginx -t
+
+sudo systemctl reload nginx
+```
+
+### Obtaining An SSL Certificate
+
+``` sh
+sudo certbot --nginx -d example.com -d www.example.com
+
+sudo certbot renew --dry-run
 ```
