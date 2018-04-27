@@ -25,6 +25,8 @@ systemctl status nginx
 ## Node.js
 
 ``` sh
+sudo yum install git
+
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 
 sudo apt-get install -y nodejs
@@ -87,8 +89,8 @@ var http = require('http');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hello World\n');
-}).listen(8080, 127.0.0.1);
-console.log('Server running at http://127.0.0.1:8080/');
+}).listen(8080, APP_PRIVATE_IP_ADDRESS);
+console.log('Server running at http://APP_PRIVATE_IP_ADDRESS:8080');
 ```
 
 ``` sh
@@ -106,15 +108,15 @@ pm2 startup systemd
 ## Setup Nginx With Node.js
 
 ``` sh
-sudo vi /etc/nginx/sites-available/defaul
+sudo vi /etc/nginx/sites-available/default
 ```
 
-> /etc/nginx/sites-available/default
+> default
 
 ``` txt
 . . .
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://APP_PRIVATE_IP_ADDRESS:8080;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -146,7 +148,7 @@ sudo apt-get install python-certbot-nginx
 sudo vi /etc/nginx/sites-available/default
 ```
 
-> /etc/nginx/sites-available/default
+> default
 
 ``` txt
 . . .
