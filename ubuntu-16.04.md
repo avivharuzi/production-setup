@@ -133,3 +133,33 @@ sudo certbot --nginx -d example.com -d www.example.com
 
 sudo certbot renew --dry-run
 ```
+
+## Redirect www To Non-www And Viceversa
+
+``` sh
+sudo vi /etc/nginx/sites-enabled/default
+```
+
+### Redirect www To non-www
+
+``` txt
+server {
+    server_name www.example.com;
+    return 301 $scheme://example.com$request_uri;
+}
+```
+
+### Redirect non-www To www
+
+``` txt
+server {
+    server_name example.com;
+    return 301 $scheme://www.example.com$request_uri;
+}
+```
+
+``` sh
+sudo service nginx restart
+
+curl -I http://example.com
+```
