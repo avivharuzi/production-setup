@@ -9,3 +9,9 @@
 ## Config
 
 [Nginx](nginx.md)
+
+## Programs
+
+[PuTTY](https://www.putty.org)
+[WinSCP](https://winscp.net/eng/index.php)
+[FileZilla](https://filezilla-project.org)
