@@ -5,6 +5,7 @@
 ## Virtual Machines
 
 [Ubuntu 16.04](ubuntu-16.04.md)
+
 [CentOS 7](centos-7.md)
 
 ## Config
