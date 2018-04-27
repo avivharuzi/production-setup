@@ -20,23 +20,22 @@ sudo systemctl enable nginx
 
 ### Content
 
-> /var/www/html
+> var/www/html
 
 ### Server Configuration
 
-> /etc/nginx
+> etc/nginx
 
-> /etc/nginx/nginx.conf
+> etc/nginx/nginx.conf
 
-> /etc/nginx/sites-available
+> etc/nginx/sites-available
 
-> /etc/nginx/sites-enabled
+> etc/nginx/sites-enabled
 
-> /etc/nginx/snippets
+> etc/nginx/snippets
 
 ### Server Logs
 
-> /var/log/nginx/access.log
+> var/log/nginx/access.log
 
 > var/log/nginx/error.log
-
