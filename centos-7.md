@@ -33,15 +33,7 @@ sudo yum -y install nodejs
 
 sudo yum install gcc-c++ make
 
-node -v
-
-npm -v
-
-npm i -g npm
-
-npm i -g nodemon
-
-npm i -g pm2
+npm i -g npm nodemon pm2
 ```
 
 ## MongoDB
@@ -100,10 +92,6 @@ http.createServer(function (req, res) {
   res.end('Hello World\n');
 }).listen(8080, APP_PRIVATE_IP_ADDRESS);
 console.log('Server running at http://APP_PRIVATE_IP_ADDRESS:8080');
-```
-
-``` sh
-nodemon hello.js
 ```
 
 ## Using PM2
