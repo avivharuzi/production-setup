@@ -7,11 +7,15 @@ function startScript() {
 }
 
 function startAction() {
-    info $TYPE_BACKGROUND "Starting: $1"
+    warning $TYPE_REGULAR "===================================================================================================="
+    info $TYPE_BACKGROUND "Starting: $1..."
+    warning $TYPE_REGULAR "===================================================================================================="
 }
 
 function endAction() {
-    success $TYPE_BACKGROUND "Done: $1"
+    warning $TYPE_REGULAR "===================================================================================================="
+    success $TYPE_BACKGROUND "Done: $1 successfully."
+    warning $TYPE_REGULAR "===================================================================================================="
 }
 
 function addSudoUser() {
@@ -21,7 +25,7 @@ function addSudoUser() {
     sudo adduser $USER
     sudo usermod -aG sudo $USER
 
-    endAction "adding sudo user $USER"
+    endAction "sudo user $USER added"
 }
 
 function systemUpdates() {
@@ -45,7 +49,7 @@ function installNginx() {
     sudo apt-get install nginx
     sudo ufw allow 'Nginx Full'
 
-    endAction "nginx added successfully"
+    endAction "nginx added"
 }
 
 function installNodeJs() {
@@ -57,7 +61,7 @@ function installNodeJs() {
 
     sudo npm i -g npm nodemon pm2
 
-    endAction "node.js added successfully"
+    endAction "node.js added"
 }
 
 function installMySql() {
@@ -65,7 +69,7 @@ function installMySql() {
 
     sudo apt-get install -y mysql-server
 
-    endAction "mysql addedd successfully"
+    endAction "mysql addedd"
 }
 
 function mongodService() {
@@ -115,7 +119,7 @@ function installMongoDb() {
             esac
     done
 
-    endAction "mongodb added successfully"
+    endAction "mongodb added"
 }
 
 function installGhostBlog() {
@@ -123,7 +127,7 @@ function installGhostBlog() {
 
     sudo npm i -g ghost-cli
 
-    endAction "ghost cli added successfully"
+    endAction "ghost cli added"
 
     startAction "install ghost blog"
 
@@ -133,5 +137,5 @@ function installGhostBlog() {
     cd /var/www/ghost
     ghost install
 
-    endAction "ghost blog added successfully"
+    endAction "ghost blog added"
 }
