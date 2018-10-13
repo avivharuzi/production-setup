@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Reset Color
 RESET_COLOR='\e[0m';
 
