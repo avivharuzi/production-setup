@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install nginx
 ```
 
-Adjust The Firewall
+#### Adjust The Firewall
 
 ``` sh
 sudo ufw app list
@@ -99,7 +99,7 @@ pm2 startup systemd
 sudo vi /etc/nginx/sites-available/default
 ```
 
-> default
+### default
 
 ``` txt
 . . .
@@ -136,7 +136,7 @@ sudo apt-get install python-certbot-nginx
 sudo vi /etc/nginx/sites-available/default
 ```
 
-> default
+### default
 
 ``` txt
 . . .
