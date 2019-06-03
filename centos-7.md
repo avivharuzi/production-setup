@@ -2,7 +2,7 @@
 
 ## Nginx
 
-> Installation
+### Installation
 
 ``` sh
 sudo yum install epel-release
@@ -14,7 +14,7 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 
-> Adjust The Firewall
+### Adjust The Firewall
 
 ``` sh
 sudo firewall-cmd --permanent --zone=public --add-service=http 
@@ -108,7 +108,7 @@ pm2 startup systemd
 sudo vi /etc/nginx/nginx.conf
 ```
 
-> nginx.conf
+### nginx.conf
 
 ``` txt
 . . .
@@ -145,7 +145,7 @@ sudo yum install certbot-nginx
 sudo vi /etc/nginx/nginx.conf
 ```
 
-> nginx.conf
+### nginx.conf
 
 ``` txt
 . . .
@@ -177,7 +177,7 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 sudo vi /etc/nginx/nginx.conf
 ```
 
-> nginx.conf
+### nginx.conf
 
 ``` txt
 . . .
@@ -194,7 +194,7 @@ sudo systemctl reload nginx
 sudo crontab -e
 ```
 
-> crontab
+### crontab
 
 ``` txt
 . . .
