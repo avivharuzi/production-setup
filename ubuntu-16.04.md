@@ -2,7 +2,7 @@
 
 ## Nginx
 
-> Installation
+### Installation
 
 ``` sh
 sudo apt-get update
@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install nginx
 ```
 
-> Adjust The Firewall
+Adjust The Firewall
 
 ``` sh
 sudo ufw app list
