@@ -1,6 +1,6 @@
 # Production Setup
 
-> a production setup guides
+A Production setup scripts.
 
 ## Virtual Machines
 
